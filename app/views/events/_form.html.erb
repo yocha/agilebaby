@@ -2,7 +2,7 @@
   <div class="control-group">
     <%= f.label :task_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :task_id, :class => 'number_field' %>
+      <%= f.select :task_id, Task.all.map {|t| [t.name, t.id]} %>
     </div>
   </div>
   <div class="control-group">
