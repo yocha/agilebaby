@@ -41,3 +41,4 @@ gem 'jquery-rails'
 
 gem 'rspec-rails'
 gem 'devise'
+gem 'recaptcha', :require => 'recaptcha/rails'
