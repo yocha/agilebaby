@@ -1,7 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def create
-    if false #verify_recaptcha
+    if verify_recaptcha
       super
     else
       build_resource
