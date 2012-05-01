@@ -5,7 +5,7 @@ class CreateShoppingItems < ActiveRecord::Migration
       t.integer :category_id
       t.text :description
       t.integer :suggested_quantity
-      t.boolean :required
+      t.boolean :required, :default => false
 
       t.timestamps
     end

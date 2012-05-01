@@ -3,6 +3,8 @@ Agilebaby::Application.routes.draw do
 
   resources :events
   resources :tasks
+  resources :categories
+  resources :shopping_items
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

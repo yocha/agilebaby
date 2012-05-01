@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120429064445) do
+ActiveRecord::Schema.define(:version => 20120501044942) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "events", :force => true do |t|
     t.integer  "task_id"
@@ -21,6 +28,16 @@ ActiveRecord::Schema.define(:version => 20120429064445) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
+  end
+
+  create_table "shopping_items", :force => true do |t|
+    t.string   "name"
+    t.integer  "category_id"
+    t.text     "description"
+    t.integer  "suggested_quantity"
+    t.boolean  "required",           :default => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
   end
 
   create_table "tasks", :force => true do |t|

@@ -12,3 +12,8 @@ Task.delete_all
 Task.create(name: "Feed")
 Event.delete_all
 Event.create(task_id: Task.first.id, user_id: User.first.id, start_time: Time.now, duration: 30, comment: "easy")
+
+Category.delete_all
+Category.create(:name => 'stuff')
+ShoppingItem.delete_all
+ShoppingItem.create(:name => 'bottles', :category_id => Category.first.id)
