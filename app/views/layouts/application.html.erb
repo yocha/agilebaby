@@ -36,10 +36,12 @@
       <a class="brand" href='#'>AgileBaby</a>
       <div class="nav-collapse">
         <ul class="nav">
-          <li><%= link_to "Events", events_path %></li>
-          <li><%= link_to "Tasks", tasks_path %></li>
-          <li><%= link_to "Categories", categories_path %></li>
-          <li><%= link_to "Shopping Items", shopping_items_path %></li>
+          <% if current_user %>
+            <li><%= link_to "Events", events_path %></li>
+            <li><%= link_to "Tasks", tasks_path %></li>
+            <li><%= link_to "Categories", categories_path %></li>
+            <li><%= link_to "Shopping Items", shopping_items_path %></li>
+          <% end %>
         </ul>
         <ul class="nav pull-right">
           <% if user_signed_in? %>
