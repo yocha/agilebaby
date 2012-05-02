@@ -3,6 +3,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th />
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:category_id) %></th>
@@ -12,9 +13,10 @@
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="shopping_items" data-update-url="<%= sort_shopping_items_url %>">
     <% @shopping_items.each do |shopping_item| %>
-      <tr>
+      <%= content_tag_for :tr, shopping_item do %>
+        <td class="handle">[drag]</td>
         <td><%= link_to shopping_item.id, shopping_item_path(shopping_item) %></td>
         <td><%= shopping_item.name %></td>
         <td><%= shopping_item.category.name %></td>
@@ -30,7 +32,7 @@
                       :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
                       :class => 'btn btn-mini btn-danger' %>
         </td>
-      </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

@@ -39,6 +39,7 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+gem 'acts_as_list'
 gem 'simple_form'
 gem 'rspec-rails'
 gem 'devise'

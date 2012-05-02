@@ -2,7 +2,7 @@ class ShoppingItemsController < ApplicationController
   before_filter :authenticate_user!
   #before_filter :check_admin, :except => [:index]
   def index
-    @shopping_items = ShoppingItem.all
+    @shopping_items = ShoppingItem.order("position")
     respond_to do |format|
       format.html 
       format.json {render json: @shopping_items}
@@ -58,5 +58,11 @@ class ShoppingItemsController < ApplicationController
       format.html { redirect_to shopping_items_url }
       format.json { head :no_content }
     end
+  end
+  def sort
+    params[:shopping_item].each_with_index do |id, index|
+      ShoppingItem.update_all({position: index+1}, {id: id})
+    end
+    render nothing: true
   end
 end
