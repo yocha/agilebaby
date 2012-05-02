@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :check_admin, :except => [:index, :show]
+  #before_filter :check_admin, :except => [:index, :show]
   def index
     @categories = Category.all
     respond_to do |format|

@@ -36,7 +36,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    @event = current_user.event.find(params[:id])
+    @event = Event.find(params[:id])
   end
 
   # POST /events

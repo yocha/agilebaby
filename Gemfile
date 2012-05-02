@@ -39,7 +39,9 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+gem 'simple_form'
 gem 'rspec-rails'
 gem 'devise'
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'copycopter_client', '2.0.0'
+

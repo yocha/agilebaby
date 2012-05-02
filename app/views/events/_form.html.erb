@@ -1,32 +1,14 @@
-<%= form_for @event, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :task_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :task_id, Task.all.map {|t| [t.name, t.id]} %>
+<%= simple_form_for @event, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %></legend>
+    <%= f.association :task %>
+    <%= f.input :start_time %>
+    <%= f.input :duration %>
+    <%= f.input :comment %>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+        events_path, :class => 'btn' %>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :start_time, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.datetime_select :start_time, :class => 'datetime_select' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :duration, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :duration, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :comment, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :comment, :class => 'text_area' %>
-    </div>
-  </div>
-
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                events_path, :class => 'btn' %>
-  </div>
+  </fieldset>
 <% end %>

@@ -1,12 +1,15 @@
-<%= simple_form_for @category, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @shopping_item, :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %></legend>
     <%= f.input :name %>
+    <%= f.association :category %>
     <%= f.input :description %>
+    <%= f.input :suggested_quantity %>
+    <%= f.input :required %>
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-        categories_path, :class => 'btn' %>
+        shopping_items_path, :class => 'btn' %>
     </div>
   </fieldset>
 <% end %>

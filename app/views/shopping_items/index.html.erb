@@ -1,0 +1,40 @@
+<%- model_class = ShoppingItem.new.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:category_id) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:quantity) %></th>
+      <th><%= model_class.human_attribute_name(:required) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @shopping_items.each do |shopping_item| %>
+      <tr>
+        <td><%= link_to shopping_item.id, shopping_item_path(shopping_item) %></td>
+        <td><%= shopping_item.name %></td>
+        <td><%= shopping_item.category.name %></td>
+        <td><%= shopping_item.description %></td>
+        <td><%= shopping_item.suggested_quantity %></td>
+        <td><%= shopping_item.required %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_shopping_item_path(shopping_item), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      shopping_item_path(shopping_item),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_shopping_item_path,
+            :class => 'btn btn-primary' %>

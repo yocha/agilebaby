@@ -1,0 +1,35 @@
+<%- model_class = @shopping_item.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<p>
+  <strong><%= model_class.human_attribute_name(:name) %>:</strong><br>
+  <%= @shopping_item.name %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:category_id) %>:</strong><br>
+  <%= @shopping_item.category.name %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:description) %>:</strong><br>
+  <%= @shopping_item.description %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:suggested_quantity) %>:</strong><br>
+  <%= @shopping_item.suggested_quantity %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:required) %>:</strong><br>
+  <%= @shopping_item.required %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              shopping_items_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_shopping_item_path(@shopping_item), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              shopping_item_path(@shopping_item),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>
