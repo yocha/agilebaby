@@ -16,3 +16,27 @@
 //= require dataTables/jquery.dataTables
 //= require twitter/bootstrap
 //= require_tree .
+
+(function() {
+ $(function() {
+   return $('#record_feed').click(function() {
+     return $.post($(this).data('update-url'))
+     });
+   });
+ }).call(this);
+
+(function() {
+ $(function() {
+   return $('#record_poop').click(function() {
+     return $.post($(this).data('update-url'))
+     });
+   });
+ }).call(this);
+
+(function() {
+ $(function() {
+   return $('#record_pee').click(function() {
+     return $.post($(this).data('update-url'))
+     });
+   });
+ }).call(this)

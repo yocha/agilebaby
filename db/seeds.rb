@@ -8,8 +8,9 @@
 
 User.delete_all
 User.create(email: "yocha@yahoo.com", password: "Temp1234")
-Task.delete_all
-Task.create(name: "Feed")
+Task.create(name: 'Feed') unless Task.find_by_name('Feed')
+Task.create(name: 'Poop') unless Task.find_by_name('Poop')
+Task.create(name: 'Pee') unless Task.find_by_name('Pee')
 Event.delete_all
 Event.create(task_id: Task.first.id, user_id: User.first.id, start_time: Time.now, duration: 30, comment: "easy")
 

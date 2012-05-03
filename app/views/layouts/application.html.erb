@@ -56,11 +56,12 @@
   </div>
   <% if current_user %>
   <div class="container">
-    <p class="lead"></p>
     <header class="jumbotron subhead" id="overview">
     <div class="subnav">
       <ul class="nav nav-pills">
-        <li><a href="#buttonGroups" class="btn btn-primary">Feed</a></li>
+        <li class="btn" id="record_feed" data-update-url="<%= record_feed_events_url %>">Feed</li>
+        <li class="btn" id="record_poop" data-update-url="<%= record_poop_events_url %>">Poop</li>
+        <li class="btn" id="record_pee" data-update-url="<%= record_pee_events_url %>">Pee</li>
       </ul>
     </div>
     </header>
