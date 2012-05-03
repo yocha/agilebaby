@@ -1,0 +1,45 @@
+Burp Cloths,Clothing,12,true
+Snap Shirts,Clothing,7,true
+Onesies 0-3,Clothing,7,true
+Onesies 3-6,Clothing,7,true
+Booties,Clothing,6,true
+Footed Pajamas 0-3,Clothing,5,true
+Footed Pajamas 3-6,Clothing,5,true
+Bibs,Clothing,6,true
+Hats,Clothing,5,true
+Swaddle Blankets,Clothing,8,true
+Towels,Clothing,5,true
+Washcloths,Clothing,5,true
+Outfits 0-3,Clothing,5,true
+Outfits 3-6,Clothing,5,true
+Sweaters,Clothing,2,false
+Chaning Table Covers,Clothing,4,true
+Robe,Hospital,1,false
+Camera and/or Video Equipment,Hospital,1,false
+Flip Flops,Hospital,1,false
+Insurance Card,Hospital,1,true
+Nursing Bra,Clothing,1,true
+Cell Phone and Charger,Hospital,1,true
+Toiletries,Hospital,1,false
+Towels,Hospital,2,false
+Clothing for baby to go home,Hospital,1,true
+Car Seat,Hospital,1,true
+Outfit to Wear Home,Hospital,1,true
+Infant Bath (buy one with hammock/sling),Home,1,true
+Swing,Home,1,true
+Gymini,Home,1,true
+Bottle Drying Rack,Home,1,true
+Boppy Pillow for BreastFeeding,Home,1,true
+Pacifiers,Home,2,true
+Lanolin,Home,1,true
+Cotton Balls,Home,1,true
+Antiseptic Soap,Home,3,true
+Rubbing Alcohol (for belly button),Home,1,true
+Bottle and Nipple Brush,Home,1,true
+Container for Bottles and Nipples,Home,1,true
+Dreft detergent,Home,1,true
+Dreft Stain Remover Spray and Wash,Home,1,true
+Maxi pads,Home,4,true
+No Scratch Mittens,Home,1,true
+Monitor,Home,1,true
+Aveeno Baby Body Wash/Shompoo,Home,1,true
