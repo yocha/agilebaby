@@ -16,7 +16,7 @@
       <tr>
         <td><%= link_to event.id, event_path(event) %></td>
         <td><%= event.task.name %></td>
-        <td><%= event.start_time %></td>
+        <td><%= event.start_time.to_s(:pretty) %></td>
         <td><%= event.duration %></td>
         <td><%= event.comment %></td>
         <td>
