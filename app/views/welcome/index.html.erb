@@ -16,7 +16,7 @@
       </thead>
       <tbody>
           <% ShoppingItem.all.each do |shopping_item| %>
-            <tr><td><%= shopping_item.name %></td><td><%= shopping_item.suggested_quantity %></td></tr>
+            <tr><td><%= amazon_search_url(shopping_item.name) %></td><td><%= shopping_item.suggested_quantity %></td></tr>
           <% end %>
       </tbody>
     </table>
