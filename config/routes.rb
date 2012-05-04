@@ -1,4 +1,6 @@
 Agilebaby::Application.routes.draw do
+  resources :links
+
   devise_for :users, :controllers => {:registrations => "registrations"}
 
   resources :events do

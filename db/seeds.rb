@@ -18,3 +18,6 @@ Category.delete_all
 Category.create(:name => 'stuff')
 ShoppingItem.delete_all
 ShoppingItem.create(:name => 'bottles', :category_id => Category.first.id)
+
+Link.delete_all
+Link.create(:url => "http://www.yahoo.com", :category_id => Category.first.id, :title => "Yahoo!")
