@@ -1,5 +1,6 @@
 class ShoppingItemsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :check_admin
   #before_filter :check_admin, :except => [:index]
   def index
     @shopping_items = ShoppingItem.order("position")

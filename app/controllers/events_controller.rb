@@ -84,29 +84,12 @@ class EventsController < ApplicationController
     end
   end
   
-  def record_feed
-    feeding = Event.new
-    feeding.user = current_user
-    feeding.task = Task.find_by_name('Feed')
-    feeding.start_time = Time.now
-    feeding.comment = "2 oz"
-    feeding.save
-    render nothing: true    
-  end
-  def record_poop
-    feeding = Event.new
-    feeding.user = current_user
-    feeding.task = Task.find_by_name('Poop')
-    feeding.start_time = Time.now
-    feeding.save
-    render nothing: true    
-  end
-  def record_pee
-    feeding = Event.new
-    feeding.user = current_user
-    feeding.task = Task.find_by_name('Pee')
-    feeding.start_time = Time.now
-    feeding.save
+  def record_event
+    event = Event.new
+    event.user = current_user
+    event.task = Task.find_by_name(params[:event].capitalize)
+    event.start_time = Time.now
+    event.save
     render nothing: true    
   end
 end

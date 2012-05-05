@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.delete_all
-User.create(email: "yocha@yahoo.com", password: "Temp1234")
+User.create(email: "yocha@yahoo.com", password: "Temp1234", admin: true)
 Task.create(name: 'Feed') unless Task.find_by_name('Feed')
 Task.create(name: 'Poop') unless Task.find_by_name('Poop')
 Task.create(name: 'Pee') unless Task.find_by_name('Pee')

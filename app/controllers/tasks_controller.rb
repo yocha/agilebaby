@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :check_admin, :except => [:index]
+  before_filter :check_admin
   
   def index
     @tasks = Task.all

@@ -5,6 +5,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:quick_button) %></th>
       <% if current_user.admin? %>
         <th><%=t '.actions', :default => t("helpers.actions") %></th>
       <% end %>
@@ -15,6 +16,7 @@
       <tr>
         <td><%= link_to task.id, task_path(task) %></td>
         <td><%= task.name %></td>
+        <td><%= task.quick_button %></td>
         <% if current_user.admin? %>
           <td>
             <%= link_to t('.edit', :default => t("helpers.links.edit")),

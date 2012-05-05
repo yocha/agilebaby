@@ -1,25 +1,31 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = @link.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
 
 <p>
-  <b>Url:</b>
+  <strong><%= model_class.human_attribute_name(:url) %>:</strong><br>
   <%= @link.url %>
 </p>
-
 <p>
-  <b>Title:</b>
+  <strong><%= model_class.human_attribute_name(:title) %>:</strong><br>
   <%= @link.title %>
 </p>
-
 <p>
-  <b>Confirmed:</b>
+  <strong><%= model_class.human_attribute_name(:confirmed) %>:</strong><br>
   <%= @link.confirmed %>
 </p>
-
 <p>
-  <b>Category:</b>
+  <strong><%= model_class.human_attribute_name(:category_id) %>:</strong><br>
   <%= @link.category_id %>
 </p>
 
-
-<%= link_to 'Edit', edit_link_path(@link) %> |
-<%= link_to 'Back', links_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              links_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_link_path(@link), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              link_path(@link),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

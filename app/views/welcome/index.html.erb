@@ -30,6 +30,10 @@
 </div>
 <div class="row">
   <div class="span9 well">
-  links
+    <ul>
+      <% Link.all.each do |l| %>
+        <li><a href=<%= l.url %>><%= l.title %></a></li>
+      <% end %>
+    </ul>
   </div>
 </div>

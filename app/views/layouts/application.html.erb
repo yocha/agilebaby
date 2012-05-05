@@ -37,9 +37,11 @@
         <ul class="nav">
           <% if current_user %>
             <li><%= link_to "Events", events_path %></li>
-            <li><%= link_to "Tasks", tasks_path %></li>
-            <li><%= link_to "Categories", categories_path %></li>
-            <li><%= link_to "Shopping Items", shopping_items_path %></li>
+            <% if current_user.admin? %>
+              <li><%= link_to "Tasks", tasks_path %></li>
+              <li><%= link_to "Categories", categories_path %></li>
+              <li><%= link_to "Shopping Items", shopping_items_path %></li>
+            <% end  %>
           <% end %>
         </ul>
         <ul class="nav pull-right">
@@ -58,9 +60,9 @@
     <header class="jumbotron subhead" id="overview">
     <div class="subnav">
       <ul class="nav nav-pills">
-        <li class="btn" id="record_feed" data-update-url="<%= record_feed_events_url %>">Feed</li>
-        <li class="btn" id="record_poop" data-update-url="<%= record_poop_events_url %>">Poop</li>
-        <li class="btn" id="record_pee" data-update-url="<%= record_pee_events_url %>">Pee</li>
+        <% Task.where('quick_button = 1').all.each do |t| %>
+          <li class="btn record_event" data-update-url="<%= record_event_events_url %>?event=<%= t.name %>"><%= t.name %></li>
+        <% end %>
       </ul>
     </div>
     </header>

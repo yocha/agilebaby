@@ -4,9 +4,7 @@ Agilebaby::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
 
   resources :events do
-    collection {post :record_feed}
-    collection {post :record_pee}
-    collection {post :record_poop}
+    collection {post :record_event}
   end
 
   resources :tasks
