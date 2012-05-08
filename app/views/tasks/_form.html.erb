@@ -1,0 +1,9 @@
+<%= simple_form_for @task, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :quick_button %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                links_path, :class => 'btn' %>
+  </div>
+<% end %>
