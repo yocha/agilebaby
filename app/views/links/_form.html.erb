@@ -2,7 +2,7 @@
   <%= f.input :url %>
   <%= f.input :title %>
   <%= f.input :confirmed %>
-  <%= f.input :category_id %>
+  <%= f.association :category %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
