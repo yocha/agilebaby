@@ -1,7 +1,8 @@
 Agilebaby::Application.routes.draw do
   resources :links
 
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, :controllers => {:registrations => "registrations"}, :path_prefix => 'u'
+  resources :users
 
   resources :events do
     collection {post :record_event}
