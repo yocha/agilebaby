@@ -9,6 +9,10 @@
   <strong><%= model_class.human_attribute_name(:description) %>:</strong><br>
   <%= @category.description %>
 </p>
+<p>
+  <strong><%= model_class.human_attribute_name(:matrix) %>:</strong><br>
+  <%= @category.matrix %>
+</p>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

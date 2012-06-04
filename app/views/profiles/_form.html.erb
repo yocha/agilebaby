@@ -1,13 +1,14 @@
-<%= simple_form_for @category, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @profile, :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %></legend>
     <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :matrix %>
+    <%= f.input :dob %>
+    <%= f.association :user %>
+
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-        categories_path, :class => 'btn' %>
+        profile_path, :class => 'btn' %>
     </div>
   </fieldset>
 <% end %>

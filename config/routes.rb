@@ -1,4 +1,6 @@
 Agilebaby::Application.routes.draw do
+  resources :profiles
+
   resources :links
 
   devise_for :users, :controllers => {:registrations => "registrations"}, :path_prefix => 'u'
