@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120604182239) do
+ActiveRecord::Schema.define(:version => 20120605042621) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120604182239) do
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
     t.boolean  "matrix",      :default => false
+    t.boolean  "schedule",    :default => false
   end
 
   create_table "events", :force => true do |t|
@@ -56,6 +57,18 @@ ActiveRecord::Schema.define(:version => 20120604182239) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "schedules", :force => true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "data_type"
+    t.integer  "category_id"
+    t.text     "description"
+    t.string   "frequency"
+    t.boolean  "required"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "shopping_items", :force => true do |t|

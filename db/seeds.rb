@@ -18,8 +18,9 @@ Event.create(task_id: Task.first.id, user_id: User.first.id, start_time: Time.no
 
 Category.delete_all
 Category.create(:name => 'stuff')
-Category.create(:name => 'height')
-Category.create(:name => 'weight')
+Category.create(:name => 'height', matrix: true)
+Category.create(:name => 'weight', matrix: true)
+Category.create(name: 'vaccine', schedule: true)
 ShoppingItem.delete_all
 ShoppingItem.create(:name => 'bottles', :category_id => Category.first.id)
 
@@ -37,3 +38,9 @@ m.data_type = 'inches'
 m.recorded_date = 1.days.ago
 m.profile = Profile.first
 m.save
+
+Schedule.delete_all
+Schedule.create(name: 'Vaccine A', age: 12, data_type: 'months', category_id: Category.find_by_name('vaccine').id)
+
+
+

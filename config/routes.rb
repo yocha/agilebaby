@@ -1,4 +1,6 @@
 Agilebaby::Application.routes.draw do
+  resources :schedules
+
   resources :profiles
 
   resources :links

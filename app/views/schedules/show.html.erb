@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @schedule.name %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @schedule.age %>
+</p>
+
+<p>
+  <b>Data type:</b>
+  <%= @schedule.data_type %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @schedule.category_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @schedule.description %>
+</p>
+
+<p>
+  <b>Frequency:</b>
+  <%= @schedule.frequency %>
+</p>
+
+<p>
+  <b>Required:</b>
+  <%= @schedule.required %>
+</p>
+
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>
