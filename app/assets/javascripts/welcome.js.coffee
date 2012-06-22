@@ -3,4 +3,6 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
 	$('#shopping_list').dataTable(
-	  bPaginate: false);
+		sScrollY: "400px",
+		bPaginate: false,
+	  bScrollCollapse: true);
